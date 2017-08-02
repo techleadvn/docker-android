@@ -1,0 +1,11 @@
+version: "2.0"
+services:
+  android_docker:
+    image: vntechlead/docker-android
+    environment:
+      - ANDROID_BUILD_TOOL_VERSION=25.0.3
+      - ANDROID_VERSION=25
+    volumes:
+      - .:/app 
+    working_dir: /app
+    command : ./gradlew clean build
